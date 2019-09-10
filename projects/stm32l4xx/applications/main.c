@@ -11,6 +11,7 @@
 #include <rtthread.h>
 #include <rtdevice.h>
 #include <board.h>
+#include <stdlib.h>
 
 /* defined the LED_R/LED_G/LED_B pin: PE7/PE8/PE9 */
 #define LED_R    GET_PIN(E, 7)
@@ -102,7 +103,7 @@ int main(void)
 {
     unsigned int count = 0;
 
-    while (count < 64)
+    while (count < 8)
     {
         RGB_ON(count);
         rt_thread_mdelay(1000);
@@ -111,3 +112,17 @@ int main(void)
 
     return RT_EOK;
 }
+
+static int RGB_Control(int argc, char **argv)
+{
+	if(argc != 2){
+		rt_kprintf("Please input 'RGB_ON <0-7>'\n");
+		return -1;
+	}
+
+	RGB_ON(atoi(argv[1]));
+
+	return 0;
+}
+
+MSH_CMD_EXPORT_ALIAS(RGB_Control,RGB,RGB Sample: RGB <0-7>);

@@ -75,7 +75,7 @@ elif PLATFORM == 'armcc':
     AFLAGS = DEVICE + ' --apcs=interwork '
     LFLAGS = DEVICE + ' --info sizes --info totals --info unused --info veneers --list rt-thread.map --strict --scatter "board\linker_scripts\link.sct"'
     CFLAGS += ' -I' + EXEC_PATH + '/ARM/ARMCC/include'
-    LFLAGS += ' --libpath=' + EXEC_PATH + '/ARM/ARMCC/lib'
+    LFLAGS += ' --libpath=' + EXEC_PATH + '/ARM/ARMCC/lib' 
 
     CFLAGS += ' -D__MICROLIB '
     AFLAGS += ' --pd "__MICROLIB SETA 1" '
