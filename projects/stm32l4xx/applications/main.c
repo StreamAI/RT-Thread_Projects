@@ -113,7 +113,7 @@ int main(void)
     return RT_EOK;
 }
 
-static int RGB_Control(int argc, char **argv)
+int RGB_Control(int argc, char **argv)
 {
 	if(argc != 2){
 		rt_kprintf("Please input 'RGB_ON <0-7>'\n");

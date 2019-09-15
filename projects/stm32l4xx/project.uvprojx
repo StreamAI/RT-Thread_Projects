@@ -466,6 +466,11 @@
               <FileType>1</FileType>
               <FilePath>applications\main.c</FilePath>
             </File>
+            <File>
+              <FileName>timer_sample.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>applications\timer_sample.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
