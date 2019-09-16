@@ -10,7 +10,7 @@
       <TargetName>rt-thread</TargetName>
       <ToolsetNumber>0x4</ToolsetNumber>
       <ToolsetName>ARM-ADS</ToolsetName>
-      <pCCUsed>6090000::V6.9::.\ARMCLANG</pCCUsed>
+      <pCCUsed>5060750::V5.06 update 6 (build 750)::ARMCC</pCCUsed>
       <uAC6>1</uAC6>
       <TargetOption>
         <TargetCommonOption>
@@ -371,7 +371,7 @@
             <ScatterFile>.\board\linker_scripts\link.sct</ScatterFile>
             <IncludeLibs></IncludeLibs>
             <IncludeLibsPath></IncludeLibsPath>
-            <Misc>--keep *.o(.rti_fn.*)   --keep *.o(FSymTab)</Misc>
+            <Misc>--keep *.o(.rti_fn.*) --keep *.o(FSymTab)</Misc>
             <LinkerInputFile></LinkerInputFile>
             <DisabledWarnings></DisabledWarnings>
           </LDads>
@@ -465,11 +465,6 @@
               <FileName>main.c</FileName>
               <FileType>1</FileType>
               <FilePath>applications\main.c</FilePath>
-            </File>
-            <File>
-              <FileName>timer_sample.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>applications\timer_sample.c</FilePath>
             </File>
           </Files>
         </Group>

@@ -34,6 +34,14 @@ if GetDepend('FINSH_USING_MSH'):
 if not GetDepend('FINSH_USING_MSH_ONLY'):
     src = src + fsh_src
 
-group = DefineGroup('finsh', src, depend = ['RT_USING_FINSH'], CPPPATH = CPPPATH)
+if rtconfig.CROSS_TOOL == 'keil':
+    LINKFLAGS = '--keep *.o(FSymTab)'
+
+    if not GetDepend('FINSH_USING_MSH_ONLY'):
+        LINKFLAGS = LINKFLAGS + '--keep *.o(VSymTab)'
+else:
+    LINKFLAGS = ''
+
+group = DefineGroup('finsh', src, depend = ['RT_USING_FINSH'], CPPPATH = CPPPATH, LINKFLAGS = LINKFLAGS)
 
 Return('group')

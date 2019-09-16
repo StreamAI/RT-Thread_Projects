@@ -99,20 +99,6 @@ void RGB_ON(RGB_Color RGB_LED)
 		}
 }
 
-int main(void)
-{
-    unsigned int count = 0;
-
-    while (count < 8)
-    {
-        RGB_ON(count);
-        rt_thread_mdelay(1000);
-		count++;
-    }
-
-    return RT_EOK;
-}
-
 int RGB_Control(int argc, char **argv)
 {
 	if(argc != 2){
@@ -126,3 +112,17 @@ int RGB_Control(int argc, char **argv)
 }
 
 MSH_CMD_EXPORT_ALIAS(RGB_Control,RGB,RGB Sample: RGB <0-7>);
+
+int main(void)
+{
+    unsigned int count = 0;
+
+    while (count < 8)
+    {
+        RGB_ON(count);
+        rt_thread_mdelay(1000);
+		count++;
+    }
+
+    return RT_EOK;
+}

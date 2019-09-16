@@ -29,6 +29,12 @@ if GetDepend('RT_USING_MEMHEAP') == False:
 if GetDepend('RT_USING_DEVICE') == False:
     SrcRemove(src, ['device.c'])
 
-group = DefineGroup('Kernel', src, depend = [''], CPPPATH = CPPPATH)
+if rtconfig.CROSS_TOOL == 'keil':
+    if GetDepend('RT_USING_COMPONENTS_INIT'):
+        LINKFLAGS = '--keep *.o(.rti_fn.*)'
+else:
+    LINKFLAGS = ''
+
+group = DefineGroup('Kernel', src, depend = [''], CPPPATH = CPPPATH, LINKFLAGS = LINKFLAGS)
 
 Return('group')
