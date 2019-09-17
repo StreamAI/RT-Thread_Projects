@@ -10,6 +10,10 @@
 
 #include "board.h"
 
+#if defined(RT_USING_MEMHEAP) && defined(RT_USING_MEMHEAP_AS_HEAP)
+static struct rt_memheap system_heap;
+#endif
+
 /**
   * @brief System Clock Configuration
   * @retval None
@@ -60,4 +64,55 @@ void SystemClock_Config(void)
   {
     Error_Handler();
   }
+}
+
+/**
+ * This function will initial STM32 board.
+ */
+void rt_hw_board_init()
+{
+#ifdef SCB_EnableICache
+    /* Enable I-Cache---------------------------------------------------------*/
+    SCB_EnableICache();
+#endif
+
+#ifdef SCB_EnableDCache
+    /* Enable D-Cache---------------------------------------------------------*/
+    SCB_EnableDCache();
+#endif
+
+    /* HAL_Init() function is called at the beginning of the program */
+    HAL_Init();
+
+    /* System clock initialization */
+    SystemClock_Config();
+    rt_hw_systick_init();
+
+    /* Heap initialization */
+#if defined(RT_USING_MEMHEAP) && defined(RT_USING_MEMHEAP_AS_HEAP)
+    rt_system_heap_init((void *)HEAP_BEGIN, (void *)HEAP_END);
+    rt_memheap_init(&system_heap, "sram2", (void *)STM32_SRAM2_BEGIN, STM32_SRAM2_HEAP_SIZE);
+#else
+    rt_system_heap_init((void *)HEAP_BEGIN, (void *)HEAP_END);
+#endif
+
+    /* Pin driver initialization is open by default */
+#ifdef RT_USING_PIN
+    rt_hw_pin_init();
+#endif
+
+    /* USART driver initialization is open by default */
+#ifdef RT_USING_SERIAL
+    rt_hw_usart_init();
+#endif
+
+    /* Set the shell console output device */
+#ifdef RT_USING_CONSOLE
+    rt_console_set_device(RT_CONSOLE_DEVICE_NAME);
+#endif
+
+    /* Board underlying hardware initialization */
+#ifdef RT_USING_COMPONENTS_INIT
+    rt_components_board_init();
+#endif
 }

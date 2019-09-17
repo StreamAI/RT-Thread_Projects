@@ -16,6 +16,8 @@
 #include <stm32l4xx.h>
 #include "drv_common.h"
 #include "drv_gpio.h"
+#include "drv_usart.h"
+
 
 #ifdef __cplusplus
 extern "C" {
@@ -28,6 +30,11 @@ extern "C" {
 #define STM32_SRAM1_SIZE               (96)
 #define STM32_SRAM1_START              (0x20000000)
 #define STM32_SRAM1_END                (STM32_SRAM1_START + STM32_SRAM1_SIZE * 1024)
+
+#define STM32_SRAM2_SIZE               (32)
+#define STM32_SRAM2_BEGIN              (0x10000000u)
+#define STM32_SRAM2_END                (0x10000000 + STM32_SRAM2_SIZE * 1024)
+#define STM32_SRAM2_HEAP_SIZE          ((uint32_t)STM32_SRAM2_END - (uint32_t)STM32_SRAM2_BEGIN)
 
 #if defined(__CC_ARM) || defined(__CLANG_ARM)
 extern int Image$$RW_IRAM1$$ZI$$Limit;

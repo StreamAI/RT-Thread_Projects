@@ -422,9 +422,9 @@
               <FilePath>..\..\rt-thread-4.0.1\src\kservice.c</FilePath>
             </File>
             <File>
-              <FileName>mem.c</FileName>
+              <FileName>memheap.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\rt-thread-4.0.1\src\mem.c</FilePath>
+              <FilePath>..\..\rt-thread-4.0.1\src\memheap.c</FilePath>
             </File>
             <File>
               <FileName>mempool.c</FileName>
@@ -465,6 +465,11 @@
               <FileName>main.c</FileName>
               <FileType>1</FileType>
               <FilePath>applications\main.c</FilePath>
+            </File>
+            <File>
+              <FileName>memory_sample.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>applications\memory_sample.c</FilePath>
             </File>
             <File>
               <FileName>timer_sample.c</FileName>

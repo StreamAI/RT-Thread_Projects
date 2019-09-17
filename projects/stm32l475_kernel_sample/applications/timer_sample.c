@@ -35,7 +35,7 @@ static void timeout2(void *parameter)
     rt_kprintf("one shot timer was detached! \n");
 }
 
-int timer_sample(void)
+static int timer_sample(void)
 {
     /* 创建定时器 1  周期定时器 */
     timer1 = rt_timer_create("timer1",      /* 定时器名字是 timer1 */
