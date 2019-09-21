@@ -17,3 +17,15 @@ RT-Thread_STM32L475
 
 ### 4.《[IOT-OS之RT-Thread（四）--- 时钟管理与内存管理](https://blog.csdn.net/m0_37621078/article/details/100859611)》
 
+
+
+### 5.《[IOT-OS之RT-Thread（五）--- 线程调度器与线程对象管理](https://blog.csdn.net/m0_37621078/article/details/100945020)》
+
+
+
+### 6.《[IOT-OS之RT-Thread（六）--- 线程间同步与线程间通信](https://blog.csdn.net/m0_37621078/article/details/101082972)》
+
+
+
+### 
+

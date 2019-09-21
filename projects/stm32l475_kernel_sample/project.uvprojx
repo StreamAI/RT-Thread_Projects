@@ -472,6 +472,11 @@
               <FilePath>applications\memory_sample.c</FilePath>
             </File>
             <File>
+              <FileName>thread_sample.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>applications\thread_sample.c</FilePath>
+            </File>
+            <File>
               <FileName>timer_sample.c</FileName>
               <FileType>1</FileType>
               <FilePath>applications\timer_sample.c</FilePath>
