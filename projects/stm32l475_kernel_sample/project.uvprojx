@@ -462,6 +462,16 @@
           <GroupName>Applications</GroupName>
           <Files>
             <File>
+              <FileName>ipc1_sample.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>applications\ipc1_sample.c</FilePath>
+            </File>
+            <File>
+              <FileName>ipc2_sample.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>applications\ipc2_sample.c</FilePath>
+            </File>
+            <File>
               <FileName>main.c</FileName>
               <FileType>1</FileType>
               <FilePath>applications\main.c</FilePath>
