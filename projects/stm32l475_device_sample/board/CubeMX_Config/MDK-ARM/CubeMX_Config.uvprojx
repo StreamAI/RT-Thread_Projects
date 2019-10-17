@@ -335,7 +335,7 @@
               <MiscControls/>
               <Define>USE_HAL_DRIVER,STM32L475xx,USE_HAL_DRIVER,STM32L475xx</Define>
               <Undefine/>
-              <IncludePath>../Inc;D:/RTOS_TCPIP/MDK_Project/STM32L475_CubeMX/RT-Thread_Projects/libraries/Drivers/STM32L4xx_HAL_Driver/Inc;D:/RTOS_TCPIP/MDK_Project/STM32L475_CubeMX/RT-Thread_Projects/libraries/Drivers/STM32L4xx_HAL_Driver/Inc/Legacy;D:/RTOS_TCPIP/MDK_Project/STM32L475_CubeMX/RT-Thread_Projects/libraries/Drivers/CMSIS/Device/ST/STM32L4xx/Include;D:/RTOS_TCPIP/MDK_Project/STM32L475_CubeMX/RT-Thread_Projects/libraries/Drivers/CMSIS/Include</IncludePath>
+              <IncludePath>../Inc;  ../Drivers/STM32L4xx_HAL_Driver/Inc;  ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy;  ../Drivers/CMSIS/Device/ST/STM32L4xx/Include;  ../Drivers/CMSIS/Include</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -420,6 +420,7 @@
             </File>
           </Files>
         </Group>
+      
       <Group>
           <GroupName>Drivers/STM32L4xx_HAL_Driver</GroupName>
           <Files>
@@ -460,99 +461,104 @@
               </FileOption>
             </File>
             <File>
+              <FileName>stm32l4xx_hal_qspi.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_qspi.c</FilePath>
+            </File>
+            <File>
               <FileName>stm32l4xx_hal_tim.c</FileName>
               <FileType>1</FileType>
-              <FilePath>D:/RTOS_TCPIP/MDK_Project/STM32L475_CubeMX/RT-Thread_Projects/libraries/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_tim.c</FilePath>
+              <FilePath>../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_tim.c</FilePath>
             </File>
             <File>
               <FileName>stm32l4xx_hal_tim_ex.c</FileName>
               <FileType>1</FileType>
-              <FilePath>D:/RTOS_TCPIP/MDK_Project/STM32L475_CubeMX/RT-Thread_Projects/libraries/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_tim_ex.c</FilePath>
+              <FilePath>../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_tim_ex.c</FilePath>
             </File>
             <File>
               <FileName>stm32l4xx_hal_uart.c</FileName>
               <FileType>1</FileType>
-              <FilePath>D:/RTOS_TCPIP/MDK_Project/STM32L475_CubeMX/RT-Thread_Projects/libraries/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart.c</FilePath>
+              <FilePath>../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart.c</FilePath>
             </File>
             <File>
               <FileName>stm32l4xx_hal_uart_ex.c</FileName>
               <FileType>1</FileType>
-              <FilePath>D:/RTOS_TCPIP/MDK_Project/STM32L475_CubeMX/RT-Thread_Projects/libraries/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c</FilePath>
+              <FilePath>../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c</FilePath>
             </File>
             <File>
               <FileName>stm32l4xx_hal.c</FileName>
               <FileType>1</FileType>
-              <FilePath>D:/RTOS_TCPIP/MDK_Project/STM32L475_CubeMX/RT-Thread_Projects/libraries/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal.c</FilePath>
+              <FilePath>../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal.c</FilePath>
             </File>
             <File>
               <FileName>stm32l4xx_hal_i2c.c</FileName>
               <FileType>1</FileType>
-              <FilePath>D:/RTOS_TCPIP/MDK_Project/STM32L475_CubeMX/RT-Thread_Projects/libraries/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c.c</FilePath>
+              <FilePath>../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c.c</FilePath>
             </File>
             <File>
               <FileName>stm32l4xx_hal_i2c_ex.c</FileName>
               <FileType>1</FileType>
-              <FilePath>D:/RTOS_TCPIP/MDK_Project/STM32L475_CubeMX/RT-Thread_Projects/libraries/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c_ex.c</FilePath>
+              <FilePath>../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c_ex.c</FilePath>
             </File>
             <File>
               <FileName>stm32l4xx_hal_rcc.c</FileName>
               <FileType>1</FileType>
-              <FilePath>D:/RTOS_TCPIP/MDK_Project/STM32L475_CubeMX/RT-Thread_Projects/libraries/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc.c</FilePath>
+              <FilePath>../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc.c</FilePath>
             </File>
             <File>
               <FileName>stm32l4xx_hal_rcc_ex.c</FileName>
               <FileType>1</FileType>
-              <FilePath>D:/RTOS_TCPIP/MDK_Project/STM32L475_CubeMX/RT-Thread_Projects/libraries/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c</FilePath>
+              <FilePath>../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c</FilePath>
             </File>
             <File>
               <FileName>stm32l4xx_hal_flash.c</FileName>
               <FileType>1</FileType>
-              <FilePath>D:/RTOS_TCPIP/MDK_Project/STM32L475_CubeMX/RT-Thread_Projects/libraries/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash.c</FilePath>
+              <FilePath>../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash.c</FilePath>
             </File>
             <File>
               <FileName>stm32l4xx_hal_flash_ex.c</FileName>
               <FileType>1</FileType>
-              <FilePath>D:/RTOS_TCPIP/MDK_Project/STM32L475_CubeMX/RT-Thread_Projects/libraries/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash_ex.c</FilePath>
+              <FilePath>../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash_ex.c</FilePath>
             </File>
             <File>
               <FileName>stm32l4xx_hal_flash_ramfunc.c</FileName>
               <FileType>1</FileType>
-              <FilePath>D:/RTOS_TCPIP/MDK_Project/STM32L475_CubeMX/RT-Thread_Projects/libraries/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash_ramfunc.c</FilePath>
+              <FilePath>../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash_ramfunc.c</FilePath>
             </File>
             <File>
               <FileName>stm32l4xx_hal_gpio.c</FileName>
               <FileType>1</FileType>
-              <FilePath>D:/RTOS_TCPIP/MDK_Project/STM32L475_CubeMX/RT-Thread_Projects/libraries/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_gpio.c</FilePath>
+              <FilePath>../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_gpio.c</FilePath>
             </File>
             <File>
               <FileName>stm32l4xx_hal_dma.c</FileName>
               <FileType>1</FileType>
-              <FilePath>D:/RTOS_TCPIP/MDK_Project/STM32L475_CubeMX/RT-Thread_Projects/libraries/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_dma.c</FilePath>
+              <FilePath>../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_dma.c</FilePath>
             </File>
             <File>
               <FileName>stm32l4xx_hal_dma_ex.c</FileName>
               <FileType>1</FileType>
-              <FilePath>D:/RTOS_TCPIP/MDK_Project/STM32L475_CubeMX/RT-Thread_Projects/libraries/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_dma_ex.c</FilePath>
+              <FilePath>../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_dma_ex.c</FilePath>
             </File>
             <File>
               <FileName>stm32l4xx_hal_pwr.c</FileName>
               <FileType>1</FileType>
-              <FilePath>D:/RTOS_TCPIP/MDK_Project/STM32L475_CubeMX/RT-Thread_Projects/libraries/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr.c</FilePath>
+              <FilePath>../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr.c</FilePath>
             </File>
             <File>
               <FileName>stm32l4xx_hal_pwr_ex.c</FileName>
               <FileType>1</FileType>
-              <FilePath>D:/RTOS_TCPIP/MDK_Project/STM32L475_CubeMX/RT-Thread_Projects/libraries/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c</FilePath>
+              <FilePath>../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c</FilePath>
             </File>
             <File>
               <FileName>stm32l4xx_hal_cortex.c</FileName>
               <FileType>1</FileType>
-              <FilePath>D:/RTOS_TCPIP/MDK_Project/STM32L475_CubeMX/RT-Thread_Projects/libraries/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_cortex.c</FilePath>
+              <FilePath>../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_cortex.c</FilePath>
             </File>
             <File>
               <FileName>stm32l4xx_hal_exti.c</FileName>
               <FileType>1</FileType>
-              <FilePath>D:/RTOS_TCPIP/MDK_Project/STM32L475_CubeMX/RT-Thread_Projects/libraries/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_exti.c</FilePath>
+              <FilePath>../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_exti.c</FilePath>
             </File>
           </Files>
         </Group>

@@ -27,9 +27,5 @@ RT-Thread_STM32L475
 
 
 
-### 7.《[IOT-OS之RT-Thread（七）--- 设备模型框架与PIN设备对象管理](https://blog.csdn.net/m0_37621078/article/details/101158817)》
-
-
-
 ### 
 

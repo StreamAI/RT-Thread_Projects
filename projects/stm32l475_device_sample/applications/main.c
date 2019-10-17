@@ -38,6 +38,9 @@ int RGB_LED_init(void)
     rt_pin_mode(LED_R, PIN_MODE_OUTPUT);
     rt_pin_mode(LED_G, PIN_MODE_OUTPUT);
     rt_pin_mode(LED_B, PIN_MODE_OUTPUT);
+	rt_pin_write(LED_R, PIN_HIGH);
+	rt_pin_write(LED_G, PIN_HIGH);
+	rt_pin_write(LED_B, PIN_HIGH);
 
     return 0;
 }
@@ -106,7 +109,7 @@ int RGB_Control(int argc, char **argv)
 		return -1;
 	}
 
-	RGB_ON(atoi(argv[1]));
+	RGB_ON((RGB_Color)atoi(argv[1]));
 
 	return 0;
 }
@@ -117,12 +120,11 @@ int main(void)
 {
     unsigned int count = 0;
 
-    while (count < 8)
+    while (RT_TRUE)
     {
-        RGB_ON(count);
         rt_thread_mdelay(1000);
 		count++;
     }
 
-    return RT_EOK;
+    return 0;
 }

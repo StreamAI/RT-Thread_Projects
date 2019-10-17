@@ -7,6 +7,19 @@ config SOC_STM32L475VE
 
 menu "Onboard Peripheral Drivers"
 
+    config BSP_USING_STLINK_TO_USART
+        bool "Enable STLINK TO USART (uart1)"
+        select BSP_USING_UART
+        select BSP_USING_UART1
+        default y
+
+    config BSP_USING_QSPI_FLASH
+        bool "Enable QSPI FLASH (W25Q128 qspi1)"
+        select BSP_USING_QSPI
+        select RT_USING_SFUD
+        select RT_SFUD_USING_QSPI
+        default n
+
 endmenu
 
 menu "On-chip Peripheral Drivers"
@@ -49,6 +62,18 @@ menu "On-chip Peripheral Drivers"
                 bool "Enable SPI1 RX DMA"
                 depends on BSP_USING_SPI1
                 select BSP_SPI1_TX_USING_DMA
+                default n
+        endif
+
+    menuconfig BSP_USING_QSPI
+        bool "Enable QSPI BUS"
+        default n
+        select RT_USING_QSPI
+        select RT_USING_SPI        
+        if BSP_USING_QSPI
+            config BSP_QSPI_USING_DMA
+                bool "Enable QSPI DMA support"
+                depends on BSP_USING_QSPI
                 default n
         endif
 
