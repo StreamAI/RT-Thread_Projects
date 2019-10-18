@@ -31,5 +31,9 @@ RT-Thread_STM32L475
 
 
 
+### 8.《[IOT-OS之RT-Thread（八）--- SPI设备对象管理与SFUD管理](https://blog.csdn.net/m0_37621078/article/details/102559086)》
+
+
+
 ### 
 

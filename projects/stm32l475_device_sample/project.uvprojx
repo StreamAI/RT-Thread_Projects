@@ -10,8 +10,8 @@
       <TargetName>rt-thread</TargetName>
       <ToolsetNumber>0x4</ToolsetNumber>
       <ToolsetName>ARM-ADS</ToolsetName>
-      <pCCUsed>6090000::V6.9::.\ARMCLANG</pCCUsed>
-      <uAC6>1</uAC6>
+      <pCCUsed>5060750::V5.06 update 6 (build 750)::ARMCC</pCCUsed>
+      <uAC6>0</uAC6>
       <TargetOption>
         <TargetCommonOption>
           <Device>STM32L475VETx</Device>
@@ -311,7 +311,7 @@
           </ArmAdsMisc>
           <Cads>
             <interw>1</interw>
-            <Optim>7</Optim>
+            <Optim>1</Optim>
             <oTime>0</oTime>
             <SplitLS>0</SplitLS>
             <OneElfS>1</OneElfS>
@@ -320,13 +320,13 @@
             <PlainCh>0</PlainCh>
             <Ropi>0</Ropi>
             <Rwpi>0</Rwpi>
-            <wLevel>3</wLevel>
+            <wLevel>2</wLevel>
             <uThumb>0</uThumb>
             <uSurpInc>0</uSurpInc>
             <uC99>1</uC99>
             <uGnu>0</uGnu>
             <useXO>0</useXO>
-            <v6Lang>6</v6Lang>
+            <v6Lang>4</v6Lang>
             <v6LangP>4</v6LangP>
             <vShortEn>1</vShortEn>
             <vShortWch>1</vShortWch>
@@ -337,7 +337,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER, STM32L475xx</Define>
               <Undefine></Undefine>
-              <IncludePath>.;..\..\rt-thread-4.0.1\include;.;applications;board;board\CubeMX_Config\Inc;..\..\libraries\HAL_Drivers;..\..\libraries\HAL_Drivers\config;..\..\rt-thread-4.0.1\libcpu\arm\common;..\..\rt-thread-4.0.1\libcpu\arm\cortex-m4;..\..\rt-thread-4.0.1\components\drivers\include;..\..\rt-thread-4.0.1\components\drivers\include;..\..\rt-thread-4.0.1\components\drivers\spi;..\..\rt-thread-4.0.1\components\drivers\include;..\..\rt-thread-4.0.1\components\drivers\include;..\..\rt-thread-4.0.1\components\finsh;..\..\libraries\STM32L4xx_HAL\STM32L4xx_HAL_Driver\Inc;..\..\libraries\STM32L4xx_HAL\CMSIS\Device\ST\STM32L4xx\Include;..\..\libraries\STM32L4xx_HAL\CMSIS\Include</IncludePath>
+              <IncludePath>.;..\..\rt-thread-4.0.1\include;.;applications;board;board\CubeMX_Config\Inc;..\..\libraries\HAL_Drivers;..\..\libraries\HAL_Drivers\config;..\..\rt-thread-4.0.1\libcpu\arm\common;..\..\rt-thread-4.0.1\libcpu\arm\cortex-m4;..\..\rt-thread-4.0.1\components\drivers\include;..\..\rt-thread-4.0.1\components\drivers\include;..\..\rt-thread-4.0.1\components\drivers\spi;..\..\rt-thread-4.0.1\components\drivers\include;..\..\rt-thread-4.0.1\components\drivers\spi\sfud\inc;..\..\rt-thread-4.0.1\components\drivers\include;..\..\rt-thread-4.0.1\components\finsh;..\..\libraries\STM32L4xx_HAL\STM32L4xx_HAL_Driver\Inc;..\..\libraries\STM32L4xx_HAL\CMSIS\Device\ST\STM32L4xx\Include;..\..\libraries\STM32L4xx_HAL\CMSIS\Include</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -598,7 +598,7 @@
                 <v6WtE>2</v6WtE>
                 <v6Rtti>2</v6Rtti>
                 <VariousControls>
-                  <MiscControls></MiscControls>
+                  <MiscControls> --c99</MiscControls>
                   <Define> </Define>
                   <Undefine> </Undefine>
                   <IncludePath></IncludePath>
@@ -649,6 +649,21 @@
               <FileName>qspi_core.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\rt-thread-4.0.1\components\drivers\spi\qspi_core.c</FilePath>
+            </File>
+            <File>
+              <FileName>spi_flash_sfud.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\rt-thread-4.0.1\components\drivers\spi\spi_flash_sfud.c</FilePath>
+            </File>
+            <File>
+              <FileName>sfud.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\rt-thread-4.0.1\components\drivers\spi\sfud\src\sfud.c</FilePath>
+            </File>
+            <File>
+              <FileName>sfud_sfdp.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\rt-thread-4.0.1\components\drivers\spi\sfud\src\sfud_sfdp.c</FilePath>
             </File>
             <File>
               <FileName>completion.c</FileName>

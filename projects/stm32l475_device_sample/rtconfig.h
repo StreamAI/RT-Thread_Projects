@@ -84,6 +84,10 @@
 #define RT_USING_PIN
 #define RT_USING_SPI
 #define RT_USING_QSPI
+#define RT_USING_SFUD
+#define RT_SFUD_USING_SFDP
+#define RT_SFUD_USING_FLASH_INFO_TABLE
+#define RT_SFUD_USING_QSPI
 
 /* Using WiFi */
 
@@ -166,6 +170,7 @@
 /* Onboard Peripheral Drivers */
 
 #define BSP_USING_STLINK_TO_USART
+#define BSP_USING_QSPI_FLASH
 
 /* On-chip Peripheral Drivers */
 
