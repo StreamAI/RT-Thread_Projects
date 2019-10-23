@@ -337,7 +337,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER, STM32L475xx</Define>
               <Undefine></Undefine>
-              <IncludePath>.;..\..\rt-thread-4.0.1\include;.;applications;board;board\CubeMX_Config\Inc;..\..\libraries\HAL_Drivers;..\..\libraries\HAL_Drivers\config;..\..\libraries\HAL_Drivers\drv_flash;packages\fal-latest\inc;ports\fal;..\..\rt-thread-4.0.1\libcpu\arm\common;..\..\rt-thread-4.0.1\libcpu\arm\cortex-m4;..\..\rt-thread-4.0.1\components\dfs\include;..\..\rt-thread-4.0.1\components\dfs\filesystems\devfs;..\..\rt-thread-4.0.1\components\dfs\filesystems\elmfat;..\..\rt-thread-4.0.1\components\drivers\include;..\..\rt-thread-4.0.1\components\drivers\include;..\..\rt-thread-4.0.1\components\drivers\spi;..\..\rt-thread-4.0.1\components\drivers\include;..\..\rt-thread-4.0.1\components\drivers\spi\sfud\inc;..\..\rt-thread-4.0.1\components\drivers\include;..\..\rt-thread-4.0.1\components\finsh;..\..\libraries\STM32L4xx_HAL\STM32L4xx_HAL_Driver\Inc;..\..\libraries\STM32L4xx_HAL\CMSIS\Device\ST\STM32L4xx\Include;..\..\libraries\STM32L4xx_HAL\CMSIS\Include</IncludePath>
+              <IncludePath>.;..\..\rt-thread-4.0.1\include;.;applications;board;board\CubeMX_Config\Inc;..\..\libraries\HAL_Drivers;..\..\libraries\HAL_Drivers\config;..\..\libraries\HAL_Drivers\drv_flash;packages\EasyFlash-latest\inc;ports\EasyFlash;packages\fal-latest\inc;ports\fal;..\..\rt-thread-4.0.1\libcpu\arm\common;..\..\rt-thread-4.0.1\libcpu\arm\cortex-m4;..\..\rt-thread-4.0.1\components\dfs\include;..\..\rt-thread-4.0.1\components\dfs\filesystems\devfs;..\..\rt-thread-4.0.1\components\dfs\filesystems\elmfat;..\..\rt-thread-4.0.1\components\drivers\include;..\..\rt-thread-4.0.1\components\drivers\include;..\..\rt-thread-4.0.1\components\drivers\spi;..\..\rt-thread-4.0.1\components\drivers\include;..\..\rt-thread-4.0.1\components\drivers\spi\sfud\inc;..\..\rt-thread-4.0.1\components\drivers\include;..\..\rt-thread-4.0.1\components\finsh;..\..\libraries\STM32L4xx_HAL\STM32L4xx_HAL_Driver\Inc;..\..\libraries\STM32L4xx_HAL\CMSIS\Device\ST\STM32L4xx\Include;..\..\libraries\STM32L4xx_HAL\CMSIS\Include</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -525,6 +525,56 @@
               <FileName>drv_common.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\libraries\HAL_Drivers\drv_common.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>EasyFlash</GroupName>
+          <Files>
+            <File>
+              <FileName>easyflash.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>packages\EasyFlash-latest\src\easyflash.c</FilePath>
+            </File>
+            <File>
+              <FileName>ef_cmd.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>packages\EasyFlash-latest\src\ef_cmd.c</FilePath>
+            </File>
+            <File>
+              <FileName>ef_env.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>packages\EasyFlash-latest\src\ef_env.c</FilePath>
+            </File>
+            <File>
+              <FileName>ef_env_legacy.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>packages\EasyFlash-latest\src\ef_env_legacy.c</FilePath>
+            </File>
+            <File>
+              <FileName>ef_env_legacy_wl.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>packages\EasyFlash-latest\src\ef_env_legacy_wl.c</FilePath>
+            </File>
+            <File>
+              <FileName>ef_iap.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>packages\EasyFlash-latest\src\ef_iap.c</FilePath>
+            </File>
+            <File>
+              <FileName>ef_log.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>packages\EasyFlash-latest\src\ef_log.c</FilePath>
+            </File>
+            <File>
+              <FileName>ef_utils.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>packages\EasyFlash-latest\src\ef_utils.c</FilePath>
+            </File>
+            <File>
+              <FileName>ef_fal_port.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>ports\EasyFlash\ef_fal_port.c</FilePath>
             </File>
           </Files>
         </Group>

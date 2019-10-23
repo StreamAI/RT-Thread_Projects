@@ -105,7 +105,7 @@ static void elmfat_sample(void)
 
     rt_kprintf("Write string '%s' to /user/test.txt.\n", str);
 
-    /* 以创建和读写模式打开文件，如果该文件不存在则创建该文件*/
+    /* Open the file in create and read-write mode, create the file if it does not exist*/
     fd = open("/user/test.txt", O_WRONLY | O_CREAT);
     if (fd >= 0)
     {
@@ -115,7 +115,7 @@ static void elmfat_sample(void)
         close(fd);   
     }
 
-    /* 以只读模式打开文件 */
+    /* Open file in read-only mode */
     fd = open("/user/test.txt", O_RDONLY);
     if (fd >= 0)
     {

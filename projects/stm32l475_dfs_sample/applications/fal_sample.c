@@ -158,3 +158,103 @@ static void fal_sample(void)
 }
 
 MSH_CMD_EXPORT(fal_sample, fal sample);
+
+
+#include "dfs_posix.h"
+
+#define FS_PARTITION_NAME  "filesystem"
+
+static void fal_elmfat_sample(void)
+{
+    int fd, size;
+    struct statfs elm_stat;
+    struct fal_blk_device *blk_dev;
+    char str[] = "elmfat mount to W25Q flash.", buf[80];
+
+    /* fal init */
+    fal_init();
+
+    /* create block device */
+    blk_dev = (struct fal_blk_device *)fal_blk_device_create(FS_PARTITION_NAME);
+    if(blk_dev == RT_NULL)
+        rt_kprintf("Can't create a block device on '%s' partition.\n", FS_PARTITION_NAME);
+    else
+        rt_kprintf("Create a block device on the %s partition of flash successful.\n", FS_PARTITION_NAME);
+
+    /* make a elmfat format filesystem */
+    if(dfs_mkfs("elm", FS_PARTITION_NAME) == 0)
+        rt_kprintf("make elmfat filesystem success.\n");
+
+    /* mount elmfat file system to FS_PARTITION_NAME */
+    if(dfs_mount(FS_PARTITION_NAME, "/", "elm", 0, 0) == 0)
+        rt_kprintf("elmfat filesystem mount success.\n");
+
+    /* Get elmfat file system statistics */
+    if(statfs("/", &elm_stat) == 0)
+        rt_kprintf("elmfat filesystem block size: %d, total blocks: %d, free blocks: %d.\n", 
+                    elm_stat.f_bsize, elm_stat.f_blocks, elm_stat.f_bfree);
+
+    if(mkdir("/user", 0x777) == 0)
+        rt_kprintf("make a directory: '/user'.\n");
+
+    rt_kprintf("Write string '%s' to /user/test.txt.\n", str);
+
+    /* Open the file in create and read-write mode, create the file if it does not exist*/
+    fd = open("/user/test.txt", O_WRONLY | O_CREAT);
+    if (fd >= 0)
+    {
+        if(write(fd, str, sizeof(str)) == sizeof(str))
+            rt_kprintf("Write data done.\n");
+
+        close(fd);   
+    }
+
+    /* Open file in read-only mode */
+    fd = open("/user/test.txt", O_RDONLY);
+    if (fd >= 0)
+    {
+        size = read(fd, buf, sizeof(buf));
+
+        close(fd);
+
+        if(size == sizeof(str))
+            rt_kprintf("Read data from file test.txt(size: %d): %s \n", size, buf);
+    }
+}
+MSH_CMD_EXPORT_ALIAS(fal_elmfat_sample, fal_elmfat,fal elmfat sample);
+
+
+#include "easyflash.h"
+#include <stdlib.h>
+
+static void easyflash_sample(void)
+{
+    /* fal init */
+    fal_init();
+
+    /* easyflash init */
+    if(easyflash_init() == EF_NO_ERR)
+    {
+        uint32_t i_boot_times = NULL;
+        char *c_old_boot_times, c_new_boot_times[11] = {0};
+
+        /* get the boot count number from Env */
+        c_old_boot_times = ef_get_env("boot_times");
+        /* get the boot count number failed */
+        if (c_old_boot_times == RT_NULL)
+            c_old_boot_times[0] = '0';
+
+        i_boot_times = atol(c_old_boot_times);
+        /* boot count +1 */
+        i_boot_times ++;
+        rt_kprintf("===============================================\n");
+        rt_kprintf("The system now boot %d times\n", i_boot_times);
+        rt_kprintf("===============================================\n");
+        /* interger to string */
+        sprintf(c_new_boot_times, "%d", i_boot_times);
+        /* set and store the boot count number to Env */
+        ef_set_env("boot_times", c_new_boot_times);
+        ef_save_env();
+    }
+}
+MSH_CMD_EXPORT(easyflash_sample, easyflash sample);
