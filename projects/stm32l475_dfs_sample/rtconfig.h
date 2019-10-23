@@ -169,6 +169,14 @@
 
 /* system packages */
 
+#define PKG_USING_FAL
+#define FAL_DEBUG_CONFIG
+#define FAL_DEBUG 1
+#define FAL_PART_HAS_TABLE_CFG
+#define FAL_USING_SFUD_PORT
+#define FAL_USING_NOR_FLASH_DEV_NAME "W25Q128"
+#define PKG_USING_FAL_LATEST_VERSION
+#define PKG_FAL_VER_NUM 0x99999
 
 /* peripheral libraries and drivers */
 
@@ -193,6 +201,7 @@
 /* On-chip Peripheral Drivers */
 
 #define BSP_USING_GPIO
+#define BSP_USING_ON_CHIP_FLASH
 #define BSP_USING_UART
 #define BSP_USING_UART1
 #define BSP_UART1_RX_USING_DMA
