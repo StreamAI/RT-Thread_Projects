@@ -35,5 +35,17 @@ RT-Thread_STM32L475
 
 
 
+### 9.《[IOT-OS之RT-Thread（九）--- DFS管理与devfs/elmfat示例](https://blog.csdn.net/m0_37621078/article/details/102634210)》
+
+
+
+### 10.《[IOT-OS之RT-Thread（十）--- FAL分区管理与easyflash变量管理](https://blog.csdn.net/m0_37621078/article/details/102689903)
+
+
+
+### 11.《[IOT-OS之RT-Thread（十一）--- IIC设备对象管理与Sensor框架](https://blog.csdn.net/m0_37621078/article/details/103115383)》
+
+
+
 ### 
 

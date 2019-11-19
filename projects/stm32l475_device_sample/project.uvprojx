@@ -326,7 +326,7 @@
             <uC99>1</uC99>
             <uGnu>0</uGnu>
             <useXO>0</useXO>
-            <v6Lang>4</v6Lang>
+            <v6Lang>6</v6Lang>
             <v6LangP>4</v6LangP>
             <vShortEn>1</vShortEn>
             <vShortWch>1</vShortWch>
@@ -337,7 +337,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER, STM32L475xx</Define>
               <Undefine></Undefine>
-              <IncludePath>.;..\..\rt-thread-4.0.1\include;.;applications;board;board\CubeMX_Config\Inc;..\..\libraries\HAL_Drivers;..\..\libraries\HAL_Drivers\config;..\..\rt-thread-4.0.1\libcpu\arm\common;..\..\rt-thread-4.0.1\libcpu\arm\cortex-m4;..\..\rt-thread-4.0.1\components\drivers\include;..\..\rt-thread-4.0.1\components\drivers\include;..\..\rt-thread-4.0.1\components\drivers\spi;..\..\rt-thread-4.0.1\components\drivers\include;..\..\rt-thread-4.0.1\components\drivers\spi\sfud\inc;..\..\rt-thread-4.0.1\components\drivers\include;..\..\rt-thread-4.0.1\components\finsh;..\..\libraries\STM32L4xx_HAL\STM32L4xx_HAL_Driver\Inc;..\..\libraries\STM32L4xx_HAL\CMSIS\Device\ST\STM32L4xx\Include;..\..\libraries\STM32L4xx_HAL\CMSIS\Include</IncludePath>
+              <IncludePath>.;..\..\rt-thread-4.0.1\include;.;applications;board;board\CubeMX_Config\Inc;..\..\libraries\HAL_Drivers;..\..\libraries\HAL_Drivers\config;packages\aht10-latest;..\..\rt-thread-4.0.1\libcpu\arm\common;..\..\rt-thread-4.0.1\libcpu\arm\cortex-m4;..\..\rt-thread-4.0.1\components\drivers\include;..\..\rt-thread-4.0.1\components\drivers\include;..\..\rt-thread-4.0.1\components\drivers\include;..\..\rt-thread-4.0.1\components\drivers\spi;..\..\rt-thread-4.0.1\components\drivers\include;..\..\rt-thread-4.0.1\components\drivers\spi\sfud\inc;..\..\rt-thread-4.0.1\components\drivers\include;..\..\rt-thread-4.0.1\components\drivers\sensors;..\..\rt-thread-4.0.1\components\drivers\include;..\..\rt-thread-4.0.1\components\finsh;..\..\libraries\STM32L4xx_HAL\STM32L4xx_HAL_Driver\Inc;..\..\libraries\STM32L4xx_HAL\CMSIS\Device\ST\STM32L4xx\Include;..\..\libraries\STM32L4xx_HAL\CMSIS\Include</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -462,6 +462,11 @@
           <GroupName>Applications</GroupName>
           <Files>
             <File>
+              <FileName>i2c_sample.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>applications\i2c_sample.c</FilePath>
+            </File>
+            <File>
               <FileName>main.c</FileName>
               <FileType>1</FileType>
               <FilePath>applications\main.c</FilePath>
@@ -517,9 +522,29 @@
               <FilePath>..\..\libraries\HAL_Drivers\drv_qspi.c</FilePath>
             </File>
             <File>
+              <FileName>drv_soft_i2c.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\libraries\HAL_Drivers\drv_soft_i2c.c</FilePath>
+            </File>
+            <File>
               <FileName>drv_common.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\libraries\HAL_Drivers\drv_common.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>aht10</GroupName>
+          <Files>
+            <File>
+              <FileName>aht10.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>packages\aht10-latest\aht10.c</FilePath>
+            </File>
+            <File>
+              <FileName>sensor_asair_aht10.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>packages\aht10-latest\sensor_asair_aht10.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -601,7 +626,7 @@
                   <MiscControls> --c99</MiscControls>
                   <Define> </Define>
                   <Undefine> </Undefine>
-                  <IncludePath></IncludePath>
+                  <IncludePath> </IncludePath>
                 </VariousControls>
               </Cads>
               <Aads>
@@ -625,6 +650,21 @@
             </GroupArmAds>
           </GroupOption>
           <Files>
+            <File>
+              <FileName>i2c_core.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\rt-thread-4.0.1\components\drivers\i2c\i2c_core.c</FilePath>
+            </File>
+            <File>
+              <FileName>i2c_dev.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\rt-thread-4.0.1\components\drivers\i2c\i2c_dev.c</FilePath>
+            </File>
+            <File>
+              <FileName>i2c-bit-ops.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\rt-thread-4.0.1\components\drivers\i2c\i2c-bit-ops.c</FilePath>
+            </File>
             <File>
               <FileName>pin.c</FileName>
               <FileType>1</FileType>
@@ -699,6 +739,21 @@
               <FileName>workqueue.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\rt-thread-4.0.1\components\drivers\src\workqueue.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Sensors</GroupName>
+          <Files>
+            <File>
+              <FileName>sensor.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\rt-thread-4.0.1\components\drivers\sensors\sensor.c</FilePath>
+            </File>
+            <File>
+              <FileName>sensor_cmd.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\rt-thread-4.0.1\components\drivers\sensors\sensor_cmd.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -844,6 +899,16 @@
               <FileName>stm32l4xx_hal_usart_ex.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\libraries\STM32L4xx_HAL\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_usart_ex.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32l4xx_hal_i2c.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\libraries\STM32L4xx_HAL\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_i2c.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32l4xx_hal_i2c_ex.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\libraries\STM32L4xx_HAL\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_i2c_ex.c</FilePath>
             </File>
             <File>
               <FileName>stm32l4xx_hal_spi.c</FileName>

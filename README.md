@@ -39,7 +39,11 @@ RT-Thread_STM32L475
 
 
 
-### 10.《[IOT-OS之RT-Thread（十）--- FAL分区管理与easyflash变量管理](https://blog.csdn.net/m0_37621078/article/details/102689903)》
+### 10.《[IOT-OS之RT-Thread（十）--- FAL分区管理与easyflash变量管理](https://blog.csdn.net/m0_37621078/article/details/102689903)
+
+
+
+### 11.《[IOT-OS之RT-Thread（十一）--- IIC设备对象管理与Sensor框架](https://blog.csdn.net/m0_37621078/article/details/103115383)》
 
 
 
