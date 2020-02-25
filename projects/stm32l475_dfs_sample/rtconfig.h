@@ -99,6 +99,8 @@
 #define RT_USING_SERIAL
 #define RT_SERIAL_USING_DMA
 #define RT_SERIAL_RB_BUFSZ 64
+#define RT_USING_I2C
+#define RT_USING_I2C_BITOPS
 #define RT_USING_PIN
 #define RT_USING_SPI
 #define RT_USING_QSPI
@@ -106,6 +108,8 @@
 #define RT_SFUD_USING_SFDP
 #define RT_SFUD_USING_FLASH_INFO_TABLE
 #define RT_SFUD_USING_QSPI
+#define RT_USING_SENSOR
+#define RT_USING_SENSOR_CMD
 
 /* Using WiFi */
 
@@ -189,6 +193,9 @@
 
 /* peripheral libraries and drivers */
 
+#define PKG_USING_SENSORS_DRIVERS
+#define PKG_USING_AHT10
+#define PKG_USING_AHT10_LATEST_VERSION
 
 /* miscellaneous packages */
 
@@ -216,6 +223,9 @@
 #define BSP_UART1_RX_USING_DMA
 #define BSP_USING_QSPI
 #define BSP_QSPI_USING_DMA
+#define BSP_USING_I2C1
+#define BSP_I2C1_SCL_PIN 54
+#define BSP_I2C1_SDA_PIN 33
 
 /* Board extended module Drivers */
 
