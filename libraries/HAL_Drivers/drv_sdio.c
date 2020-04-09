@@ -814,7 +814,8 @@ void SD_LowLevel_DMA_RxConfig(uint32_t *src, uint32_t *dst, uint32_t BufferSize)
   */
 static rt_uint32_t stm32_sdio_clock_get(struct stm32_sdio *hw_sdio)
 {
-    return HAL_RCC_GetPCLK2Freq();
+    //return HAL_RCC_GetPCLK2Freq();
+    return HAL_RCCEx_GetPeriphCLKFreq(RCC_PERIPHCLK_SDMMC1);
 }
 
 static rt_err_t DMA_TxConfig(rt_uint32_t *src, rt_uint32_t *dst, int Size)
@@ -842,6 +843,17 @@ void SDIO_IRQHandler(void)
 
 int rt_hw_sdio_init(void)
 {
+#ifdef BSP_USING_WIFI
+
+    #include <drivers/pin.h>
+    #define WIFI_REG_ON_PIN   GET_PIN(D, 1)
+    rt_pin_mode(WIFI_REG_ON_PIN, PIN_MODE_OUTPUT);
+    rt_pin_write(WIFI_REG_ON_PIN, PIN_LOW);
+    rt_thread_mdelay(1);
+    rt_pin_write(WIFI_REG_ON_PIN, PIN_HIGH);
+
+#endif
+
     struct stm32_sdio_des sdio_des;
     SD_HandleTypeDef hsd;
     hsd.Instance = SDCARD_INSTANCE;

@@ -5,7 +5,7 @@ RT-Thread_STM32L475
 
 ### 1.《[IOT-OS之RT-Thread（一）---系统启动与初始化过程](https://blog.csdn.net/m0_37621078/article/details/100584591)》
 
-###  
+
 
 ### 2.《[IOT-OS之RT-Thread（二）--- CPU架构与BSP移植过程](https://blog.csdn.net/m0_37621078/article/details/100715601)》
 
@@ -43,13 +43,13 @@ RT-Thread_STM32L475
 
 
 
-### 11.《[IOT-OS之RT-Thread（十一）--- FAL分区管理与easyflash变量管理](https://blog.csdn.net/m0_37621078/article/details/102689903)
+### 11.《[IOT-OS之RT-Thread（十一）--- FAL分区管理与easyflash变量管理](https://blog.csdn.net/m0_37621078/article/details/102689903)》
 
 
 
-### 
+### 12.《[IOT-OS之RT-Thread（十二）--- 驱动分层与主从分离思想](https://blog.csdn.net/m0_37621078/article/details/104790217)》
 
 
 
-### 
+
 

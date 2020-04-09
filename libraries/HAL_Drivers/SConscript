@@ -76,6 +76,10 @@ if GetDepend(['BSP_USING_SDIO']):
 if GetDepend(['BSP_USING_USBD_FS']):
     src += ['drv_usbd_fs.c']
 
+# add wlan driver code
+if GetDepend(['BSP_USING_WIFI']):
+    src += ['drv_wlan.c']
+
 src += ['drv_common.c']
 
 path =  [cwd]
