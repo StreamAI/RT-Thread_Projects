@@ -656,7 +656,7 @@
                   <MiscControls> --c99 --c99</MiscControls>
                   <Define> </Define>
                   <Undefine> </Undefine>
-                  <IncludePath> </IncludePath>
+                  <IncludePath></IncludePath>
                 </VariousControls>
               </Cads>
               <Aads>
@@ -860,7 +860,7 @@
                   <MiscControls> --c99</MiscControls>
                   <Define> </Define>
                   <Undefine> </Undefine>
-                  <IncludePath> </IncludePath>
+                  <IncludePath></IncludePath>
                 </VariousControls>
               </Cads>
               <Aads>

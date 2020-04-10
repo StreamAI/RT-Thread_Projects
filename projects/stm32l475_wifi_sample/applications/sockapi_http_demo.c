@@ -65,7 +65,7 @@ static void httpserver_serve(int sock)
 
             do
             {
-                rt_thread_mdelay(6000);
+                rt_thread_mdelay(5000);
                 /* 读取温湿度数据，并将其填入Sensor_Data字符串 */
                 rt_device_read(sensor_temp, 0, &temp_data, 1);
                 rt_device_read(sensor_humi, 0, &humi_data, 1);

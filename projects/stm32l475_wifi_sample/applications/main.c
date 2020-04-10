@@ -1,21 +1,9 @@
-/*
- * Copyright (c) 2006-2018, RT-Thread Development Team
- *
- * SPDX-License-Identifier: Apache-2.0
- *
- * Change Logs:
- * Date           Author       Notes
- * 2018-09-01     ZeroFree     first implementation
- */
-
 #include <rtthread.h>
 #include <rtdevice.h>
 #include <board.h>
 #include <msh.h>
-
 #include "drv_wlan.h"
 #include "wifi_config.h"
-
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -32,6 +20,7 @@ static void print_wlan_information(struct rt_wlan_info *info);
 
 static struct rt_semaphore net_ready;
 
+/* WLAN网卡就绪回调函数 */
 void wlan_ready_handler(int event, struct rt_wlan_buff *buff, void *parameter)
 {
     rt_sem_release(&net_ready);
@@ -49,8 +38,8 @@ int main(void)
     struct rt_wlan_info info;
     struct rt_wlan_scan_result *scan_result;
 
-    /* 等待 500 ms 以便 wifi 完成初始化 */
-    rt_hw_wlan_wait_init_done(500);
+    /* 等待 1000 ms 以便 wifi 完成初始化 */
+    rt_hw_wlan_wait_init_done(1000);
 
     /* 扫描热点 */
     LOG_D("start to scan ap ...");
@@ -78,6 +67,8 @@ int main(void)
     rt_wlan_register_event_handler(RT_WLAN_EVT_READY, wlan_ready_handler, RT_NULL);
     /* 注册 wlan 断开回调函数 */
     rt_wlan_register_event_handler(RT_WLAN_EVT_STA_DISCONNECTED, wlan_station_disconnect_handler, RT_NULL);
+
+    /* 阻塞式连接指定热点 */
     result = rt_wlan_connect(WLAN_SSID, WLAN_PASSWORD);
     if (result == RT_EOK)
     {
@@ -86,12 +77,15 @@ int main(void)
         rt_wlan_get_info(&info);
         LOG_D("station information:");
         print_wlan_information(&info);
+
         /* 等待成功获取 IP */
         result = rt_sem_take(&net_ready, NET_READY_TIME_OUT);
         if (result == RT_EOK)
         {
             LOG_D("networking ready!");
             msh_exec("ifconfig", rt_strlen("ifconfig"));
+            rt_thread_mdelay(2000);
+            msh_exec("ping www.baidu.com", rt_strlen("ping www.baidu.com"));
         }
         else
         {
